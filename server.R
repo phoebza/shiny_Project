@@ -1,5 +1,5 @@
 library(shiny)
-
+library(DT)
 
 # Define server logic required to generate and plot a random distribution
 shinyServer(function(input, output) {
@@ -29,7 +29,7 @@ shinyServer(function(input, output) {
 
             n <- input$obs
 
-            h <- hist(datasetInput(),
+            h <- hist(datasetInput(),xlab = 'data',
                  main=paste('r', dist, '(', n, ')', sep=''))
       })
 
@@ -39,7 +39,7 @@ shinyServer(function(input, output) {
 
             n <- input$obs
 
-            h <- hist(datasetInput(),
+            h <- hist(datasetInput(),xlab = 'data',
                       main=paste('r', dist, '(', n, ')', sep=''))
 
             # fitting the distribution curve to the histogram
@@ -55,8 +55,7 @@ shinyServer(function(input, output) {
             abline(v = mean(datasetInput()), col="red", lwd=3, lty=2)
 
             # Display the fitting distribution line curve on the side bar
-            output$yFit <- renderText({
-
+            output$descrpLine <- renderPrint({
                   yfit
             })
       })
@@ -68,9 +67,12 @@ shinyServer(function(input, output) {
       })
 
       # Generate an HTML table view of the data
-      output$viewTable <- renderTable({
-            head(datasetInput(), n = input$obs)
+      output$viewTable <- DT::renderDataTable({
+            datatable(data.frame(x=datasetInput()), colnames = c('n', 'data'))
+
       })
 
-
+      output$descrp <- renderPrint({
+            input$dist
+      })
 })

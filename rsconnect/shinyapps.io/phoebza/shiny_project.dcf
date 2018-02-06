@@ -5,6 +5,9 @@ account: phoebza
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 271097
-bundleId: 1205881
+bundleId: 1210081
 url: https://phoebza.shinyapps.io/shiny_project/
-when: 1517667952.67457
+when: 1517925431.66462
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.html|README.md|slides

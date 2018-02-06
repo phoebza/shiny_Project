@@ -10,9 +10,9 @@ This project can be accessed on ShinyApps:
 
 https://phoebza.shinyapps.io/shiny_project/
 
-The `index.md` file can be found on:
+The presentation file can be found on:
 
-https://github.com/phoebza/slidifyProject/tree/master/slides
+http://rpubs.com/phoebza/shiny_Project
 
 
 Have fun.

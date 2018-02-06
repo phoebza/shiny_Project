@@ -1,0 +1,71 @@
+Distribution Functions Project
+========================================================
+author: Phoebe
+date: 06 Feb 2018
+autosize: true
+
+INTRODUCTION
+========================================================
+This presentation addresses the shiny App developed for "Developed Data Product" course project. The peer assessed assignment has two parts:
+* Shiny application and deploy it on Rstudio's servers.
+* Slidify to prepare a reproducible pitch presentation.
+
+The developed shiny application is avalilable at:
+
+https://phoebza.shinyapps.io/shiny_project/
+
+The presentation is available on:
+
+http://rpubs.com/phoebza/shiny_Project
+
+Source code for ui.R and server.R files are available on the GitHub: https://github.com/phoebza/slidifyProject
+
+
+Shiny Apps Features & Functions
+========================================================
+
+The App has inputs on the sidebar panel, & output on main panel.<br/>
+Input for the shiny App:
+* radiobutton - to choose distribution type to observe
+* slider - to control number of observation of dataset generated from radiobutton
+* submitButton - to click once all changes have been made (used to not automatically update output)
+
+
+Shiny Apps Features & Functions (cont.)
+========================================================
+
+Output - TABS:
+* distribution fit on histogram graph from generated data from selected distribution type
+* histogram graph from generated data from selected distribution type
+* summary statistics of generated data
+* raw generated data from the selected distribution type from radioButton
+
+
+Data generated for rnorm
+========================================================
+
+Data generated for normal distribution for 986 observations
+
+<style>
+pre code, pre, code {
+  white-space: pre !important;
+  overflow-x: scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+</style>
+
+```{r , echo=FALSE}
+x <- rnorm(n = 986)
+x
+```
+
+
+Histogram
+========================================================
+
+
+```{r, echo= FALSE}
+set.seed(13489)
+hist(x, main = "rnorm histogram")
+```
